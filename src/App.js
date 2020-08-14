@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Contacts from './components/Contacts';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  state = {
+    contacts: []
+  }
+
+
+  componentDidMount() {
+    // query to database mongodatabase
+    fetch('http://localhost:4000')
+      .then(res => res.json())
+      .then((data) => {
+        this.setState({
+          contacts: data
+        })
+      })
+      .catch(console.log)
+  }
+
+
+  render() {
+    console.log(this.state.contacts)
+    return (
+      <div className="App">
+        <header className="App-header">
+          <Contacts contacts = {this.state.contacts} />
+        </header>
+      </div>
+    )
+  }
+
 }
 
 export default App;
