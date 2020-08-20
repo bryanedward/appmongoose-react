@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Contacts from './components/Contacts';
-import './App.css';
-
+import './App.css'
 class App extends Component {
 
   state = {
@@ -23,12 +22,11 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state.contacts)
     return (
-      <div className="App">
-        <header className="App-header">
+      <div className="App" style={{
+        maxWidth: '100%',
+      }}>
           <Contacts contacts = {this.state.contacts} />
-        </header>
       </div>
     )
   }
