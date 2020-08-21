@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Contacts from './components/Contacts';
 import Nav from './components/Nav';
-//import './App.css'
+import './App.css'
 class App extends Component {
 
   state = {
