@@ -5,8 +5,10 @@ const CardStyled = {
   Card: styled.div`
     display: flex;
     flexDirection: column;
+    width: 95%;
     flex-wrap: wrap;
-
+    align-content: center;
+    margin: 10px 0px 0px 0px;
     @media(max-width: 768px){
       flexDirection: row
     }
@@ -15,13 +17,13 @@ const CardStyled = {
   itemCard: styled.div`
   margin: 10px;
   padding: 50px 0px;
-  width: 300px;
+  width: 280px;
   border: 1px solid black;
   background: #43C6AC;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #191654, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, .5);
-  border-radius: 2px
+  border-radius: 2px;
   `,
 
   detailsCard: styled.small`
