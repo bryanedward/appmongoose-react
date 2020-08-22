@@ -8,7 +8,7 @@ export default function Lists() {
             <Divider />
             <List>
                 {['Pagina Principal', 'Mensajeria', 'Contactos'].map((nameOption, index) => (
-                    <ListItem key={nameOption}>
+                    <ListItem key={nameOption} button>
                         <ListItemIcon>{
                             index % 2 === 0 ? <InboxIcon /> : <DraftsIcons />}
                         </ListItemIcon>

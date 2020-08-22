@@ -1,44 +1,37 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Contacts from './components/Contacts';
 import Nav from './components/Nav';
-import Lists from './components/List';
-import themesApp from './styles/AppStyle';
+import themeApp from './styles/AppStyle'
+import Drawers from './components/Drawers'
 
-class App extends Component {
+const App = () => {
 
-  state = {
-    contacts: []
-  }
+  const [allow, setAllow] = useState([]);
 
-
-  componentDidMount() {
-    // query to database mongodatabase
+  useEffect(() => {
+    // consultar base de datos
     fetch('http://localhost:4000')
       .then(res => res.json())
       .then((data) => {
-        this.setState({
-          contacts: data
-        })
+        setAllow(data)
       })
       .catch(console.log)
-  }
+  }, [])
 
+  const theme = themeApp();
 
-  render() {
-    return (
-      <div >
-        <Nav />
-        <Lists/>
-        <Contacts style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}
-          contacts={this.state.contacts} />
+  return (
+    <div className={theme.root}>
+      <Nav />
+      <Drawers />
+      <div className={theme.content}>
+        <div className={theme.toolbar} />
+        <Contacts
+          contacts={allow} />
       </div>
-    )
-  }
+
+    </div>
+  )
 
 }
 
