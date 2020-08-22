@@ -7,15 +7,16 @@ const CardStyled = {
     flexDirection: column;
     width: 95%;
     flex-wrap: wrap;
-    align-content: center;
+    justify-content: center;    
     margin: 10px 0px 0px 0px;
+    border: 1px solid #c3c3c3;
     @media(max-width: 768px){
       flexDirection: row
     }
     `,
 
   itemCard: styled.div`
-  margin: 10px;
+  margin: 10px auto;
   padding: 50px 0px;
   width: 280px;
   border: 1px solid black;
@@ -33,7 +34,7 @@ const CardStyled = {
   color: #E3C230;
   margin: 5px 7px;
   font-weight: bold;
-  }
+}
   `
 }
 

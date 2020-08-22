@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Contacts from './components/Contacts';
 import Nav from './components/Nav';
-import './App.css'
+import Lists from './components/List';
+import themesApp from './styles/AppStyle';
+
 class App extends Component {
 
   state = {
@@ -24,16 +26,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}>
-        <Nav/>
-        <Contacts 
-        
-        contacts={this.state.contacts} />
+      <div >
+        <Nav />
+        <Lists/>
+        <Contacts style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+          contacts={this.state.contacts} />
       </div>
     )
   }
