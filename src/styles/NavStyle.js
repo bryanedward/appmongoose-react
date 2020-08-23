@@ -4,9 +4,6 @@ import { makeStyles } from '@material-ui/core/styles'
 const drawerWidth = 240
 
 const themes = makeStyles((theme) => ({
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
     title: {
         flexGrow: 1,
     },
@@ -16,6 +13,11 @@ const themes = makeStyles((theme) => ({
             marginLeft: drawerWidth,
         },
     },
+    menuButton:{
+        [theme.breakpoints.up('sm')]:{
+            display: 'none'
+        }
+    }
 }))
 
 export default themes

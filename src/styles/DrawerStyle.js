@@ -15,8 +15,6 @@ const themesDrawer = makeStyles((theme) => ({
         width: drawerWidth,
     },
     toolbar: theme.mixins.toolbar
-
-
 }))
 
 export default themesDrawer
