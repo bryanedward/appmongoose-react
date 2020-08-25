@@ -16,7 +16,7 @@ const App = () => {
   }
   useEffect(() => {
     // queey in the database
-    fetch('http://localhost:4000')
+    fetch('http://localhost:4500')
       .then(res => res.json())
       .then((data) => {
         setAllow(data)
